@@ -224,7 +224,7 @@ function Graph() {
       		<div className={"news"}>
       			<div className={"desc"}>
       				<p>
-	      				Two Weeks Of News
+	      				News
       				</p>
       			</div>
       			<News latestDate={latestDate}
