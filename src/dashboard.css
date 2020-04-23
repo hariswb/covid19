@@ -1,0 +1,289 @@
+body {
+	--menu-bg: #222831;/*#84a9ac;*/
+	--card-bg: #30475e;
+	--card-bg-hover: #116979;
+	--dashboard-bg: #30475e;
+	--chart-bg: #30475e;
+	--border: black;
+	--body-bg: #222831;
+};
+
+h1 h2 h3 h4 h5 span p a{
+	color: #f4f4f4;
+}
+
+.dashboard{
+	background-color: /*var(--dashboard-bg)*/;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.dashboard-head{
+	width:95vw;
+	background-color: var(--dashboard-bg);/* var(--menu-bg);*/
+	margin: auto;
+	border: 0px solid var(--border);
+	display: flex;
+	flex-direction: row;
+	border-radius: 5px 5px 0 0; 
+	padding: 5px 4px 5px 4px;
+}
+
+.dashboard-head p{
+	font-size: 1.6em;
+	vertical-align: middle;
+	padding:0;
+	margin: 10px;
+	margin-left: ;
+	color: #f3f3f3;
+
+}
+
+.App-logo {
+  height: 50px;
+  display: block;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	background-color: ;
+
+}
+
+.charts{
+	background-color: var(--chart-bg);
+	border: 0px solid var(--border);
+	background-color: var(--card-bg); 
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end; 
+	margin:4px;
+	height: 80vh;
+}
+
+.chart{
+	background-color: var(--chart-bg); 
+	height: 70vh;
+	width:60vw;
+}
+
+.tab{
+	height: 10vh;	
+	background-color: var(--dashboard-bg);
+}
+/*
+.svg-content {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+*/
+.news{
+	width: 20vw;
+	height: 80vh;
+	display: flex;
+	flex-direction: column;
+	border: 0px solid var(--border);
+	border-radius: 0px 0px 0px 0; 
+	position: relative;
+}
+
+
+.newslist{
+	overflow-y: scroll;
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.newslist::after{
+	content:".";
+	color: rgb(24, 55, 92,0);
+	line-height: 50px;
+	width: 100%;
+	position: absolute;
+	pointer-events: none;
+	bottom:10vh;
+	background-image: linear-gradient(to bottom, rgb(24, 55, 92,0.0), rgb(24, 55, 92, 0.8));
+}
+
+.article{
+	text-align: left;
+	background-color: var(--card-bg);
+	margin-bottom: 5px;
+	padding: 10px;
+}
+
+.article h4{
+	font-size: 1.1em;
+}
+
+.article a{
+	color: #ff9200ff;
+	text-decoration: none;
+}
+.article span{
+	margin-right: 1vw;
+	font-size: 0.9em;
+	color: #f3f3f3;
+
+}
+
+.article p{
+	font-size: 1em;
+	color: #f3f3f3;
+	text-align: left;
+}
+
+.empty{
+	height: 100%;
+	width:100%;
+	background-color: var(--dashboard-bg);
+}
+
+.empty h4{
+	margin:auto;
+	color: #f3f3f3;
+}
+
+.menu{
+	display: flex;
+	flex-direction: column;
+	height: 80vh;
+	background-color: var(--body-bg);
+	/*border-right: 1px solid var(--border);*/
+	width:15vw;
+	border-radius: 0 0 0 0px; 
+	overflow: hidden;
+}
+
+.menu-title{
+	margin-bottom: 4px;
+	padding: 5px;
+	text-align: left;	
+}
+
+.menu-title p{
+	font-size:1.5em;
+	color: #ff9200ff;
+	font-weight: bold;
+	margin: 0;
+}
+.menu-title span{
+	font-size: 1em;
+	color: #f3f3f3;
+	text-align: left;	
+}
+
+.countrylist{
+	overflow-y: scroll;
+}
+
+
+.card{
+	font-size: 1em;
+	background-color: var(--card-bg);
+	margin: 0 0 2px 0;
+	padding: 5px 0 5px 0;
+}
+
+.card:hover{
+	background-color: var(--card-bg-hover);
+}
+.card p{
+	text-align: left;
+	margin: 0 0 0 5px;
+}
+.card p strong {
+	color: #ff9200ff;
+
+}
+
+.card p span {
+	color: #f3f3f3;
+}
+
+.menu-title{
+	margin: 10;
+	background-color: var(--dashboard-bg);
+}
+.menu-title h4{
+	font-size: 1.3em;
+	color: #ff9200ff;
+}
+.menu-title h5{
+	font-size: 1.1em;
+}
+
+.menu::after{
+	content:".";
+	color: rgb(24, 55, 92,0);
+	line-height: 50px;
+	width: 15vw;
+	pointer-events: none;
+	bottom: calc(15vh - 64px);
+	position: absolute;
+	background-image: linear-gradient(to bottom, rgb(24, 55, 92,0.0), rgb(24, 55, 92, 0.8));
+}
+
+.tabrow{
+	list-style-type: none;
+	padding: 0;
+	margin: auto;
+	display: inline;
+}
+.tabrow li{
+	display: inline;
+	background-color: #3282b8;
+	border-radius: 15px;
+	margin: 10px 5px 10px 5px; 
+	padding: 3px 5px 4px 5px;
+	color: #f3f3f3;
+	font-weight: bold;
+	font-size: 1em;
+	float: left;
+	height: 1.2em;
+}
+
+.tabrow .selected{
+	background-color: #e57900ff;
+
+}
+
+.tabstatus {
+	display: inline;
+}
+.tabstatus li{
+	float: right;
+}
+
+div::-webkit-scrollbar {
+    background-color: dimgrey;
+    width: 10px;
+}
+
+div::-webkit-scrollbar-track {
+    border-radius: 9px;
+
+}
+
+div::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #222831;
+}
+
+
