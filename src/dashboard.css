@@ -103,6 +103,8 @@ h1 h2 h3 h4 h5 span p a{
 }
 
 
+
+
 .newslist{
 	overflow-y: scroll;
 	height: 70vh;
@@ -253,8 +255,7 @@ h1 h2 h3 h4 h5 span p a{
 	margin: 10px 5px 10px 5px; 
 	padding: 3px 5px 4px 5px;
 	color: #f3f3f3;
-	font-weight: bold;
-	font-size: 1em;
+	font-size: 0.9em;
 	float: left;
 	height: 1.2em;
 }
@@ -287,3 +288,6 @@ div::-webkit-scrollbar-thumb {
 }
 
 
+.news .tab .tabrow li{
+	float: right
+}

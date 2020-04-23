@@ -49,7 +49,7 @@ const News = (props)=>{
 						<strong>{article.title}</strong>
 					</a>
 				</h4>
-				<span >By: {article.source.name} </span><br/>
+				<span >{article.source.name} </span><br/>
 				<span >{article.publishedAt.slice(0,10)}</span>
 				<p>{article.description}</p>
 			</div>

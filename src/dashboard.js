@@ -121,7 +121,7 @@ function Graph() {
 
 	///console.log(numbers, dates)
   	const worldTotal =	Object.entries(data).map(item=>{
-  			const num = item[1][status]
+  			const num = item[1]["confirmed"]
   			return num[num.length-1]
   			}).reduce((a, b) => a + b, 0)
   	
@@ -225,8 +225,8 @@ function Graph() {
       			/>
       			<div className={"tab"}>
       				<ul className={"tabrow"}>
-						<li className={langTab.en} onClick={()=>setNews("en")}>EN</li>
 						<li className={langTab.local} onClick={()=>setNews("local")}>LOCAL</li>
+						<li className={langTab.en} onClick={()=>setNews("en")}>EN</li>
 					</ul>
       			</div>
       		</div>
