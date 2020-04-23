@@ -26,7 +26,7 @@ h1 h2 h3 h4 h5 span p a{
 	border: 0px solid var(--border);
 	display: flex;
 	flex-direction: row;
-	border-radius: 5px 5px 0 0; 
+	/*border-radius: 5px 5px 0 0; */
 	padding: 5px 4px 5px 4px;
 }
 
@@ -81,17 +81,22 @@ h1 h2 h3 h4 h5 span p a{
 }
 
 .tab{
-	height: 10vh;	
+	height: 5vh;	
 	background-color: var(--dashboard-bg);
 }
-/*
-.svg-content {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
+
+.desc{
+	height: 5vh;	
+	background-color: var(--dashboard-bg);
 }
-*/
+
+.desc p{
+	font-size: 1.3em;
+	font-weight: bold;
+	color:#f3f3f3;	
+	margin:1vh;
+}
+
 .news{
 	width: 20vw;
 	height: 80vh;
@@ -119,7 +124,7 @@ h1 h2 h3 h4 h5 span p a{
 	width: 100%;
 	position: absolute;
 	pointer-events: none;
-	bottom:10vh;
+	bottom:5vh;
 	background-image: linear-gradient(to bottom, rgb(24, 55, 92,0.0), rgb(24, 55, 92, 0.8));
 }
 
@@ -142,7 +147,6 @@ h1 h2 h3 h4 h5 span p a{
 	margin-right: 1vw;
 	font-size: 0.9em;
 	color: #f3f3f3;
-
 }
 
 .article p{
@@ -237,7 +241,7 @@ h1 h2 h3 h4 h5 span p a{
 	line-height: 50px;
 	width: 15vw;
 	pointer-events: none;
-	bottom: calc(15vh - 64px);
+	bottom: calc(15vh - 65px);
 	position: absolute;
 	background-image: linear-gradient(to bottom, rgb(24, 55, 92,0.0), rgb(24, 55, 92, 0.8));
 }
@@ -245,14 +249,11 @@ h1 h2 h3 h4 h5 span p a{
 .tabrow{
 	list-style-type: none;
 	padding: 0;
-	margin: auto;
 	display: inline;
 }
 .tabrow li{
 	display: inline;
 	background-color: #3282b8;
-	border-radius: 15px;
-	margin: 10px 5px 10px 5px; 
 	padding: 3px 5px 4px 5px;
 	color: #f3f3f3;
 	font-size: 0.9em;

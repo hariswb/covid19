@@ -194,7 +194,12 @@ function Graph() {
 	      			{countries}
 	 			</div>
 	      	</div>
-      		<div className={"charts"}>	
+      		<div className={"charts"}>
+      			<div className={"desc"}>
+      				<p>
+      					{status.toUpperCase()} CASES OF {getCountryData(country,"CLDR display name").toUpperCase()}
+      				</p>
+      			</div>
       			<div className={"chart"}>
       				<Chart data={scale==='dailyCases'?dailyNumbers:numbers} 
       						dates={dates} 
@@ -217,6 +222,11 @@ function Graph() {
       		</div>
 
       		<div className={"news"}>
+      			<div className={"desc"}>
+      				<p>
+	      				Two Weeks Of News
+      				</p>
+      			</div>
       			<News latestDate={latestDate}
       					countryData={{name: getCountryData(country,"CLDR display name"), 
       									iso:getCountryData(country,"ISO3166-1-Alpha-2"),
