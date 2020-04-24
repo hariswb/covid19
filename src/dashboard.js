@@ -5,6 +5,8 @@ import News from './news.js'
 import "./dashboard.css"
 import * as CountryISO from './country-codes.json'
 import logo from './logo.svg';
+import more from './more.svg';
+
 
 function Graph() {
   	//FETCH API
@@ -21,9 +23,11 @@ function Graph() {
 	const [country,setCountry] = useState("USA")	
 	const [lang,setLang] = useState("en")
 	const [langTab, setLangTab] = useState({en:"selected", local:""})
+	const [dropdown, setDropdown] = useState("close")
+	const [dropdownStyle, setDropdownStyle] = useState({display:"none"})
 	const [dimensions, setDimensions] = useState({
-		width: window.innerWidth * 0.6, 
-		height: window.innerHeight *0.7
+		width: window.innerWidth < 700? window.innerWidth *1 : window.innerWidth * 0.6, 
+		height: window.innerWidth<700? window.innerHeight *0.4 : window.innerHeight *0.7
 	})
 
 
@@ -66,8 +70,8 @@ function Graph() {
 	useEffect(()=>{
 		const debouncedHandleResize = debounce(function handleResize(){
 			setDimensions({
-				width: window.innerWidth *0.6,
-				height: window.innerHeight *0.7
+				width: window.innerWidth < 700? window.innerWidth *0.9 : window.innerWidth * 0.6, 
+		height: window.innerWidth<700? window.innerHeight *0.4 : window.innerHeight *0.7
 			})
 		}, 1000)
 
@@ -77,10 +81,7 @@ function Graph() {
       		window.removeEventListener('resize', debouncedHandleResize)
     	}
 		
-	})
-
-	console.log(dimensions)
-	
+	})	
 
 	//QUERY DATA
 	const getNumbers = (id,query) =>{return data.IDN===undefined?[]:data[id][query]}
@@ -175,9 +176,21 @@ function Graph() {
   		}
   	}
 
+  	function getDropdown(str){
+  		switch(str){
+  			case 'close':
+  				setDropdown('close');
+  				setDropdownStyle({display:"none"})
+  				break;
+  			case 'open':
+  				setDropdown('open');
+  				setDropdownStyle({display:"block"})
+  				break;
+  		}
+  	}
   	// console.log(CountryISO.default)
   	// console.log(getCountryData(country,"ISO3166-1-Alpha-2"))
-
+  	// console.log(dropdown,dropdownStyle)
   	return(
       <div className={"dashboard"}>
       	<div className={"dashboard-head"}>
@@ -195,6 +208,9 @@ function Graph() {
 	 			</div>
 	      	</div>
       		<div className={"charts"}>
+      			<div className={"more"} onClick={()=>getDropdown(dropdown==="close"?"open":"close")}>
+        			<img src={more} className="more-button" alt="more button"/>
+      			</div>
       			<div className={"desc"}>
       				<p>
       					{status.toUpperCase()} CASES OF {getCountryData(country,"CLDR display name").toUpperCase()}
@@ -240,6 +256,29 @@ function Graph() {
 					</ul>
       			</div>
       		</div>
+      		<div className={"dropdown-tab"} style={dropdownStyle}>
+      				<div>
+      					<ul className={"tabrow"}>
+		      				<li className={tab.linear} onClick={()=>setGraph("linear")}>Linear</li>
+		      				<li className={tab.logarithmic} onClick={()=>setGraph("logarithmic")} >Logarithmic</li>
+		      				<li className={tab.dailyCases} onClick={()=>setGraph("dailyCases")}>Daily Cases</li>
+      					</ul>
+      				</div>
+      				<div>
+      					<ul className={"tabrow"}>
+		      				<li className={statusTab.confirmed} onClick={()=>setStatusChart("confirmed")}>Confirmed</li>
+		      				<li className={statusTab.recovered} onClick={()=>setStatusChart("recovered")}>recovered</li>
+		      				<li className={statusTab.deaths} onClick={()=>setStatusChart("deaths")} >Deaths</li>
+      					</ul>
+      				</div>
+      				<div>
+      					<ul className={"tabrow"}>
+							<li className={langTab.en} onClick={()=>setNews("en")}>EN</li>
+							<li className={langTab.local} onClick={()=>setNews("local")}>LOCAL</li>
+						</ul>
+      				</div>
+      				
+      			</div>
       	</div>
       </div>
     )

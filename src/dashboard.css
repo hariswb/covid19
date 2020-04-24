@@ -280,7 +280,6 @@ div::-webkit-scrollbar {
 
 div::-webkit-scrollbar-track {
     border-radius: 9px;
-
 }
 
 div::-webkit-scrollbar-thumb {
@@ -290,5 +289,97 @@ div::-webkit-scrollbar-thumb {
 
 
 .news .tab .tabrow li{
-	float: right
+	float: right;
+}
+
+.more {
+	display: none;
+}
+
+.dropdown-tab{
+	display:none;
+}
+
+@media only screen and (max-width: 700px){
+
+	.container{
+		flex-direction: column;
+		width: 95vw;
+		height: 95vh;
+		justify-content: center;
+		margin: 2.5vh auto;
+	}
+	.dashboard-head{
+		padding: 0px 0 0px 0;
+		display: none;
+	}
+	.App-logo{
+		height: 4vh;
+	}
+	.dashboard-head p{
+		font-size: 1em;
+		padding: 0;
+	}
+	.menu{
+		height:20vh;
+		width: 100%;
+	}
+	.menu-title{
+		display: none;
+	}
+	.news{
+		height: 25vh;
+		width: 100%;
+	}
+	.newslist::after{
+		display: none;
+	}
+	.menu::after{
+		display: none;
+	}
+	.tab{
+		display: none;
+		
+	}
+	.more{
+		display: block;
+		height: 5vh;
+	}
+	.more-button{
+		float: right;
+		margin-right: 1vh; 
+		height: 5vh;
+		width:5vh;
+		padding-left: 20vh;
+		border-radius: 2vh;
+	}
+	.dropdown-tab{
+		position: absolute;
+		top:26vh;
+		right: 1vw;
+		background-color: #f3f3f3;
+		margin: 20px;
+		padding: 10px;
+		border-radius: 2vh 0vh 2vh 2vh;
+		display: flex;
+		flex-direction: column;
+	}
+	.tabrow{
+		display: block;
+	}
+	.tabstatus {
+	}
+	.tabrow li{
+		float:none;
+		margin: 5px 2px 5px 2px;
+		border-radius: 10px;
+	}
+	.charts{
+		width: 100%;
+		height: 48vh;
+		margin: auto;
+	}
+	.desc{
+		display: none;
+	}
 }

@@ -29,5 +29,9 @@ body{
   color: #61dafb;
 }
 
-
+@media only screen and (max-width: 700px){
+  .App-header{
+    display: none;
+  }
+}
 
