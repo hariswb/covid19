@@ -237,6 +237,7 @@ function Graph() {
       			</div>
       		</div>
 
+          {/*NEWS COMPONENT
       		<div className={"news"}>
       			<div className={"desc"}>
       				<p>
@@ -273,12 +274,12 @@ function Graph() {
       				</div>
       				<div>
       					<ul className={"tabrow"}>
-							<li className={langTab.en} onClick={()=>setNews("en")}>EN</li>
-							<li className={langTab.local} onClick={()=>setNews("local")}>LOCAL</li>
-						</ul>
+    							<li className={langTab.en} onClick={()=>setNews("en")}>EN</li>
+    							<li className={langTab.local} onClick={()=>setNews("local")}>LOCAL</li>
+    						</ul>
       				</div>
-      				
       			</div>
+            */}
       	</div>
       </div>
     )
